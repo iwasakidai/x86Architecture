@@ -12,5 +12,8 @@ all :
 %.o : %.c Makefile
 	$(CC) $(CFLAGS) -c $<
 
+helloworld.bin: helloworld.asm
+	nasm -f bin -o helloworld.bin helloworld.asm
+
 $(TARGET) : $(OBJS) Makefile
 	$(CC) -o $@ $(OBJS)
